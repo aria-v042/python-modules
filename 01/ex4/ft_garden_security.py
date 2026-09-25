@@ -7,25 +7,25 @@ class Plant:
                  name: str = "",
                  height: float = 0,
                  age: int = 0) -> None:
-
+        # Declare attributes
         self._name: str
         self._height: float
         self._age: int
-
+        # Init name
         self._name = name.capitalize()
-
+        # Init height
         if height < 0:
             self._height = 0
             print("Error, height can't be negative")
         else:
             self._height = height
-
+        # Init age
         if age < 0:
             self._age = 0
             print("Error, age can't be negative")
         else:
             self._age = age
-
+        # Display created instance
         self.show_created()
 
     # Getters
