@@ -14,13 +14,13 @@ class Plant:
 
         if height < 0:
             self._height = 0
-            print(f"{self.get_name()}: Error, height can't be negative")
+            print("Error, height can't be negative")
         else:
             self._height = height
 
         if age < 0:
             self._age = 0
-            print(f"{self.get_name()}: Error, age can't be negative")
+            print("Error, age can't be negative")
         else:
             self._age = age
 
@@ -40,31 +40,53 @@ class Plant:
     # Setters
 
     def set_name(self, name: str) -> None:
-        print(f"{self.get_name()}: ", end="")
+        if self.get_name() != "":
+            print(f"{self.get_name()}: ", end="")
+        else:
+            print("{unnamed}: ", end="")
         self._name = name.capitalize()
         print(f"Name updated: {self.get_name()}")
 
     def set_height(self, height: float) -> None:
         if height < 0:
-            print(f"{self.get_name()}: Error, height can't be negative")
+            if self.get_name() != "":
+                print(f"{self.get_name()}: ", end="") 
+            else:
+                print("{unnamed}: ", end="")
+            print("Error, height can't be negative")
             print("Height update rejected")
         else:
             self._height = height
-            print(f"{self.get_name()}: Height updated: {self.get_height()}cm")
+            if self.get_name() != "":
+                print(f"{self.get_name()}: ", end="") 
+            else:
+                print("{unnamed}: ", end="")
+            print(f"Height updated: {self.get_height()}cm")
 
     def set_age(self, age: int) -> None:
         if age < 0:
-            print(f"{self.get_name()}: Error, age can't be negative")
+            if self.get_name() != "":
+                print(f"{self.get_name()}: ", end="") 
+            else:
+                print("{unnamed}: ", end="")
+            print("Error, age can't be negative")
             print("Age update rejected")
         else:
             self._age = age
-            print(f"{self.get_name()}: Age updated: {self.get_age()} days")
+            if self.get_name() != "":
+                print(f"{self.get_name()}: ", end="") 
+            else:
+                print("{unnamed}: ", end="")
+            print(f"Age updated: {self.get_age()} days")
 
     # Plant methods
 
     def show(self) -> None:
-        print(f"{self.get_name().capitalize()}: "
-              f"{self.get_height():.1f}cm, "
+        if self.get_name() != "":
+            print(f"{self.get_name()}: ", end="") 
+        else:
+            print("{unnamed}: ", end="")
+        print(f"{self.get_height():.1f}cm, "
               f"{self.get_age()} days old")
 
     def show_created(self) -> None:
@@ -113,10 +135,17 @@ def ft_garden_security() -> None:
     # Welcome message
     print("=== Garden Security System ===")
 
+    # Test subject's example
     print("\n--- Test 1 ---\n")
     test_secure_plant("rosee", 15, 10, "rose", 25, 30, -1, -1)
+
+    # Test with default initial values
     print("\n--- Test 2 ---\n")
     test_secure_plant("", 0, 0, "pink lilie", 7, 25, -2, -2)
+
+    # Test with invalid initial values
+    print("\n--- Test 3 ---\n")
+    test_secure_plant("moonflower", -1, -1, "sunflower", 42, 60, -3, -3)
 
 
 if __name__ == "__main__":
