@@ -221,6 +221,12 @@ def ft_plant_types() -> None:
     flower1.bloom()
     flower1.show()
     print()
+    # flower2 = Flower("", 0, 0, "")
+    # flower2.show()
+    # print(f"[asking the {flower2.get_name_pretty().lower()} to bloom]")
+    # flower2.bloom()
+    # flower2.show()
+    # print()
 
     # Tree instances
     print("=== Tree")
@@ -229,6 +235,11 @@ def ft_plant_types() -> None:
     print(f"[asking the {tree1.get_name_pretty().lower()} to produce shade]")
     tree1.produce_shade()
     print()
+    # tree2 = Tree("oak", 200, 365, 5)
+    # tree2.show()
+    # print(f"[asking the {tree2.get_name_pretty().lower()} to produce shade]")
+    # tree2.produce_shade()
+    # print()
 
     # Vegetable instances
     print("=== Vegetable")
