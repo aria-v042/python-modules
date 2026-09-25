@@ -8,10 +8,11 @@ class Plant:
                  height: float = 0,
                  age: int = 0) -> None:
 
-        self._name: str = name.capitalize()
+        self._name: str
         self._height: float
         self._age: int
 
+        self._name = name.capitalize()
         if height < 0:
             self._height = 0
             print("Error, height can't be negative")
