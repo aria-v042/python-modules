@@ -138,15 +138,15 @@ def ft_garden_security() -> None:
     print("=== Garden Security System ===")
 
     # Test subject's example
-    print("\n--- Test 1 ---\n")
+    print("=== test 1")
     test_secure_plant("rosee", 15, 10, "rose", 25, 30, -1, -1)
 
     # Test with default initial values
-    print("\n--- Test 2 ---\n")
+    print("\n=== Test 2")
     test_secure_plant("", 0, 0, "pink lilie", 7, 25, -2, -2)
 
     # Test with invalid initial values
-    print("\n--- Test 3 ---\n")
+    print("\n=== Test 3")
     test_secure_plant("moonflower", -1, -1, "sunflower", 42, 60, -3, -3)
 
 
