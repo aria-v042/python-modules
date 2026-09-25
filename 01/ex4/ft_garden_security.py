@@ -24,11 +24,7 @@ class Plant:
         else:
             self._age = age
 
-        # if name == "":
-        #     print("Plant created")
-        # else:
-        print("Plant created: ", end="")
-        self.show()
+        self.show_created()
 
     # Getters
 
@@ -70,6 +66,10 @@ class Plant:
         print(f"{self.get_name().capitalize()}: "
               f"{self.get_height():.1f}cm, "
               f"{self.get_age()} days old")
+
+    def show_created(self) -> None:
+        print("Plant created: ", end="")
+        self.show()
 
     def grow(self, growth: float) -> None:
         self.set_height(self.get_height() + growth)
