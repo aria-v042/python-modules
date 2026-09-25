@@ -114,22 +114,22 @@ def test_secure_plant(
         ) -> None:
 
     # Create valid Plant instance
-    plant1 = Plant(init_name, init_height, init_age)
+    plant = Plant(init_name, init_height, init_age)
     print()
 
     # Update attributes with valid values
-    plant1.set_name(valid_name)
-    plant1.set_height(valid_height)
-    plant1.set_age(valid_age)
+    plant.set_name(valid_name)
+    plant.set_height(valid_height)
+    plant.set_age(valid_age)
     print()
 
     # Update attributes with invalid values
-    plant1.set_height(error_height)
-    plant1.set_age(error_age)
+    plant.set_height(error_height)
+    plant.set_age(error_age)
     print()
 
     print("Current state: ", end="")
-    plant1.show()
+    plant.show()
 
 
 def ft_garden_security() -> None:
