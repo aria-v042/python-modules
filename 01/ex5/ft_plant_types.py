@@ -93,9 +93,11 @@ class Flower(Plant):
                  color: str = "") -> None:
 
         self._color: str
+        self._bloomed: bool
 
         super().__init__(name, height, age)
         self._color = color
+        self._bloomed = False
 
     # Getters
 
@@ -114,9 +116,13 @@ class Flower(Plant):
     def show(self) -> None:
         super().show()
         print(f" Color: {self.get_color()}")
+        if self._bloomed:
+            print(f" {self.get_name()} is blooming beautifully!")
+        else:
+            print(f" {self.get_name()} has not bloomed yet")
 
     def bloom(self) -> None:
-        pass
+        self._bloomed = True
 
 
 class Tree(Plant):
@@ -223,6 +229,9 @@ def ft_plant_types() -> None:
     # Flower instances
     print("=== Flower")
     flower1 = Flower("rose", 15, 10, "red")
+    flower1.show()
+    print(f"[asking the {flower1.get_name().lower()} to bloom]")
+    flower1.bloom()
     flower1.show()
     print()
 
