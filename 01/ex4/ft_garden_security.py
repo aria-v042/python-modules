@@ -51,7 +51,7 @@ class Plant:
     def set_height(self, height: float) -> None:
         if height < 0:
             if self.get_name() != "":
-                print(f"{self.get_name()}: ", end="") 
+                print(f"{self.get_name()}: ", end="")
             else:
                 print("{unnamed}: ", end="")
             print("Error, height can't be negative")
@@ -59,7 +59,7 @@ class Plant:
         else:
             self._height = height
             if self.get_name() != "":
-                print(f"{self.get_name()}: ", end="") 
+                print(f"{self.get_name()}: ", end="")
             else:
                 print("{unnamed}: ", end="")
             print(f"Height updated: {self.get_height()}cm")
@@ -67,7 +67,7 @@ class Plant:
     def set_age(self, age: int) -> None:
         if age < 0:
             if self.get_name() != "":
-                print(f"{self.get_name()}: ", end="") 
+                print(f"{self.get_name()}: ", end="")
             else:
                 print("{unnamed}: ", end="")
             print("Error, age can't be negative")
@@ -75,7 +75,7 @@ class Plant:
         else:
             self._age = age
             if self.get_name() != "":
-                print(f"{self.get_name()}: ", end="") 
+                print(f"{self.get_name()}: ", end="")
             else:
                 print("{unnamed}: ", end="")
             print(f"Age updated: {self.get_age()} days")
@@ -84,7 +84,7 @@ class Plant:
 
     def show(self) -> None:
         if self.get_name() != "":
-            print(f"{self.get_name()}: ", end="") 
+            print(f"{self.get_name()}: ", end="")
         else:
             print("{unnamed}: ", end="")
         print(f"{self.get_height():.1f}cm, "
