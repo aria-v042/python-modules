@@ -195,7 +195,17 @@ class Vegetable(Plant):
     def show(self) -> None:
         super().show()
         print(f" Harvest season: {self.get_harvest_season()}")
-        print(f" Nutritional value: {self.get_nutritional_value()}")
+        print(f" Nutritional value: {int(self.get_nutritional_value())}")
+
+    def grow(self, growth: float) -> None:
+        super().grow(growth)
+        self.set_nutritional_value(
+                self.get_nutritional_value()
+                + growth / 2.1 * 0.5)
+
+    def age(self, days: int) -> None:
+        super().age(days)
+        self.set_nutritional_value(self.get_nutritional_value() + days * 0.5)
 
 
 def ft_plant_types() -> None:
@@ -222,9 +232,13 @@ def ft_plant_types() -> None:
 
     # Vegetable instances
     print("=== Vegetable")
-    vegetable1 = Vegetable("tomato", 5, 10, "April", 0)
+    vegetable1 = Vegetable("tomato", 5, 10, "April")
     vegetable1.show()
-    print()
+    print(f"[make {vegetable1.get_name_pretty().lower()} "
+          "grow and age for 20 days]")
+    vegetable1.grow(2.1 * 20)
+    vegetable1.age(20)
+    vegetable1.show()
 
 
 if __name__ == "__main__":
