@@ -13,6 +13,7 @@ class Plant:
         self._age: int
 
         self._name = name.capitalize()
+
         if height < 0:
             self._height = 0
             print("Error, height can't be negative")
