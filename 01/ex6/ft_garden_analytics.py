@@ -180,10 +180,21 @@ class Seed(Flower):
 
 class Tree(Plant):
 
+    # Inner class
     class Stats(Plant.Stats):
-        # TODO
-        pass
 
+        # Constructor
+        def __init__(self) -> None:
+
+            super().__init__()
+            self.shade_count: int = 0
+
+        # Stats methods
+        def show_stats(self) -> None:
+            super().show_stats()
+            print(f" {self.shade_count} shade")
+
+    # Constructor
     def __init__(self,
                  name: str = "",
                  height: float = 0,
@@ -198,7 +209,8 @@ class Tree(Plant):
         super().__init__(name, height, age)
         self.set_trunk_diameter(trunk_diameter)
 
-    # Getters
+        # Create inner class object
+        self._stats = self.Stats()
 
     # Getters
     def get_trunk_diameter(self) -> float:
@@ -223,6 +235,7 @@ class Tree(Plant):
               "tree now produces a shade "
               f"{self.get_height():.1f}cm long and "
               f"{self.get_trunk_diameter():.1f}cm wide.")
+        self._stats.shade_count += 1
 
 
 class Vegetable(Plant):
