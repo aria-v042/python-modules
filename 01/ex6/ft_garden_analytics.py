@@ -12,18 +12,19 @@ class Plant:
             self.age_count: int = 0
             self.show_count: int = 0
 
+        # Stats methods
         def show_stats(self) -> None:
             print(f"Stats: {self.grow_count} grow, "
                   f"{self.age_count} age, "
                   f"{self.show_count} show")
 
-
+    # Constructor
     def __init__(self,
                  name: str = "",
                  height: float = 0,
                  age: int = 0) -> None:
 
-        # Declare attributes and initialize default values
+        # Declare attributes with default values
         self._name: str = ""
         self._height: float = 0
         self._age: int = 0
@@ -36,6 +37,7 @@ class Plant:
         # Create inner class object
         self._stats = self.Stats()
 
+    # Getters
     def get_name(self) -> str:
         return self._name
 
@@ -52,7 +54,6 @@ class Plant:
         return self._age
 
     # Setters
-
     def set_name(self, name: str) -> None:
         self._name = name
 
@@ -71,7 +72,6 @@ class Plant:
             self._age = age
 
     # Plant methods
-
     def show(self) -> None:
         print(f"{self.get_name_pretty().capitalize()}: "
               f"{self.get_height():.1f}cm, "
@@ -100,13 +100,14 @@ class Plant:
 
 class Flower(Plant):
 
+    # Constructor
     def __init__(self,
                  name: str = "",
                  height: float = 0,
                  age: int = 0,
                  color: str = "") -> None:
 
-        # Declare attributes and set default values
+        # Declare attributes with default values
         self._color: str = ""
         self._bloomed: bool = False
 
@@ -115,20 +116,17 @@ class Flower(Plant):
         self.set_color(color)
 
     # Getters
-
     def get_color(self) -> str:
         return self._color
 
     # Setters
-
     def set_color(self, color: str) -> None:
         self._color = color
 
     # Flower methods
-
     def show(self) -> None:
         super().show()
-        print(f" Color: {self.get_color()}")
+        print(f" Color: {self._color}")
         if self._bloomed:
             print(f" {self.get_name_pretty().capitalize()} "
                   "is blooming beautifully!")
@@ -142,6 +140,7 @@ class Flower(Plant):
 
 class Seed(Flower):
 
+    # Constructor
     def __init__(self,
                  name: str = "",
                  height: float = 0,
@@ -149,6 +148,7 @@ class Seed(Flower):
                  color: str = "",
                  bloom_seeds: int = 0) -> None:
 
+        # Declare attributes with default values
         self._bloom_seeds: int = 0
 
         super().__init__(name, height, age, color)
@@ -200,11 +200,11 @@ class Tree(Plant):
 
     # Getters
 
+    # Getters
     def get_trunk_diameter(self) -> float:
         return self._trunk_diameter
 
     # Setters
-
     def set_trunk_diameter(self, trunk_diameter: float) -> None:
         if trunk_diameter < 0:
             print(f"{self.get_name_pretty().capitalize()}: "
@@ -213,7 +213,6 @@ class Tree(Plant):
             self._trunk_diameter = trunk_diameter
 
     # Tree methods
-
     def show(self) -> None:
         super().show()
         print(f" Trunk diameter: {self.get_trunk_diameter():.1f}cm")
