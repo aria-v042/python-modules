@@ -236,6 +236,7 @@ class Tree(Plant):
               f"{self.get_height():.1f}cm long and "
               f"{self.get_trunk_diameter():.1f}cm wide.")
         self._stats.shade_count += 1
+        # TODO: error: "Stats" has no attribute "shade_count"; [attr-defined]
 
 
 class Vegetable(Plant):
