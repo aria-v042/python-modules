@@ -3,14 +3,11 @@
 
 class Plant:
 
-
+    # Inner class
     class Stats():
 
-        def __init__(self,
-                     grow_count: int = 0,
-                     age_count: int = 0,
-                     show_count: int = 0) -> None:
-            
+        # Constructor
+        def __init__(self) -> None:
             self.grow_count: int = 0
             self.age_count: int = 0
             self.show_count: int = 0
@@ -36,7 +33,8 @@ class Plant:
         self.set_height(height)
         self.set_age(age)
 
-    # Getters
+        # Create inner class object
+        self._stats = self.Stats()
 
     def get_name(self) -> str:
         return self._name
@@ -78,15 +76,15 @@ class Plant:
         print(f"{self.get_name_pretty().capitalize()}: "
               f"{self.get_height():.1f}cm, "
               f"{self.get_age()} days old")
-        Stats.show_count += 1
+        self._stats.show_count += 1
 
     def grow(self, growth: float) -> None:
         self.set_height(self.get_height() + growth)
-        Stats.grow_count += 1
+        self._stats.grow_count += 1
 
     def age(self, days: int) -> None:
         self.set_age(self.get_age() + days)
-        Stats.age_count += 1
+        self._stats.age_count += 1
 
     @staticmethod
     def check_year_old(age_in_days: int) -> bool:
