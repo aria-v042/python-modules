@@ -84,6 +84,9 @@ class Plant:
         self.set_age(self.get_age() + days)
         self._stats.age_count += 1
 
+    def show_stats(self) -> None:
+        self._stats.show_stats()
+
     @staticmethod
     def check_year_old(age_in_days: int) -> bool:
         if age_in_days > 365:
@@ -124,7 +127,7 @@ class Flower(Plant):
     # Flower methods
     def show(self) -> None:
         super().show()
-        print(f" Color: {self._color}")
+        print(f" Color: {self._color.lower()}")
         if self._bloomed:
             print(f" {self.get_name_pretty().capitalize()} "
                   "is blooming beautifully!")
@@ -286,6 +289,12 @@ class Vegetable(Plant):
     def age(self, days: int) -> None:
         super().age(days)
         self.set_nutritional_value(self.get_nutritional_value() + days * 0.5)
+
+
+# Display statistics for any kind of Plant
+def show_plant_stats(plant: Plant) -> None:
+    print(f"[statistics for {plant.get_name_pretty().capitalize()}]")
+    plant.show_stats()
 
 
 def ft_garden_analytics() -> None:
