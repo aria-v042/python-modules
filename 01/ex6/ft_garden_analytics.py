@@ -28,14 +28,12 @@ class Plant:
         self._name: str = ""
         self._height: float = 0
         self._age: int = 0
+        self._stats: Plant.Stats = self.Stats()
 
         # Set attributes
         self.set_name(name)
         self.set_height(height)
         self.set_age(age)
-
-        # Create inner class object
-        self._stats = self.Stats()
 
     # Getters
     def get_name(self) -> str:
@@ -187,12 +185,12 @@ class Tree(Plant):
         def __init__(self) -> None:
 
             super().__init__()
-            self.shade_count: int = 0
+            self.produce_shade_count: int = 0
 
         # Stats methods
         def show_stats(self) -> None:
             super().show_stats()
-            print(f" {self.shade_count} shade")
+            print(f" {self.produce_shade_count} shade")
 
     # Constructor
     def __init__(self,
@@ -204,13 +202,11 @@ class Tree(Plant):
         # Declare attributes and set default values
         self._trunk_diameter: float = 0
         self._shade: bool = False
+        self._stats: Tree.Stats = self.Stats()
 
         # Set attributes
         super().__init__(name, height, age)
         self.set_trunk_diameter(trunk_diameter)
-
-        # Create inner class object
-        self._stats = self.Stats()
 
     # Getters
     def get_trunk_diameter(self) -> float:
@@ -235,8 +231,7 @@ class Tree(Plant):
               "tree now produces a shade "
               f"{self.get_height():.1f}cm long and "
               f"{self.get_trunk_diameter():.1f}cm wide.")
-        self._stats.shade_count += 1
-        # TODO: error: "Stats" has no attribute "shade_count"; [attr-defined]
+        self._stats.produce_shade_count += 1
 
 
 class Vegetable(Plant):
