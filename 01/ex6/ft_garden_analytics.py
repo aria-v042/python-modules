@@ -297,6 +297,7 @@ def show_plant_stats(plant: Plant) -> None:
     plant.show_stats()
 
 
+# Exercise demo
 def ft_garden_analytics() -> None:
 
     print("=== Garden Analytics ===")
@@ -304,11 +305,54 @@ def ft_garden_analytics() -> None:
     print("=== Check year-old")
     print(f"Is 30 days more than a year? -> {Plant.check_year_old(30)}")
     print(f"Is 400 days more than a year? -> {Plant.check_year_old(400)}")
+
     print()
 
+    # Create Flower object and display its information
+    print("=== Flower")
+    flower1 = Flower("rose", 15.0, 10, "red")
+    flower1.show()
+    show_plant_stats(flower1)
+    # Grow and bloom
+    print(f"[asking the {flower1.get_name().lower()} to grow and bloom]")
+    flower1.grow(8.0)
+    flower1.bloom()
+    flower1.show()
+    show_plant_stats(flower1)
+
+    print()
+
+    # Create Tree object and display its information
+    print("=== Tree")
+    tree1 = Tree("oak", 200.0, 365, 5.0)
+    tree1.show()
+    show_plant_stats(tree1)
+    # Produce shade
+    print(f"[asking the {tree1.get_name().lower()} to produce shade]")
+    tree1.produce_shade()
+    show_plant_stats(tree1)
+
+    print()
+
+    # Create Seed object and display its information
+    print("=== Seed")
+    seed1 = Seed("sunflower", 80.0, 45, "yellow", 42)
+    seed1.show()
+    # Grow, age and bloom
+    print(f"[make {seed1.get_name().lower()} grow, age and bloom]")
+    seed1.grow(30.0)
+    seed1.age(20)
+    seed1.bloom()
+    seed1.show()
+    show_plant_stats(seed1)
+
+    print()
+
+    # Create "anonymous" Plant object
     print("=== Anonymous")
-    anon = Plant.anon()
-    anon.show()
+    anon1 = Plant.anon()
+    anon1.show()
+    show_plant_stats(anon1)
 
 
 if __name__ == "__main__":
