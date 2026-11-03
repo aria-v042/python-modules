@@ -18,28 +18,26 @@ class Plant:
 
 def ft_garden_data() -> None:
 
-    # Create Plant instances
+    # Welcome message
+    print("=== Garden Plant Registry ===")
+
+    # Create and display Plant instances
     plant1 = Plant()
     plant1.name = "rose"
     plant1.height = 25
     plant1.age = 30
+    plant1.show()
 
     plant2 = Plant()
     plant2.name = "sunflower"
     plant2.height = 80
     plant2.age = 45
+    plant2.show()
 
     plant3 = Plant()
     plant3.name = "cactus"
     plant3.height = 15
     plant3.age = 120
-
-    # Welcome message
-    print("=== Garden Plant Registry ===")
-
-    # Display each plant's information
-    plant1.show()
-    plant2.show()
     plant3.show()
 
 
