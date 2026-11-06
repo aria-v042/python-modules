@@ -26,9 +26,8 @@ def simulate_growth(plant: Plant, daily_growth: float,
                     num_of_days: int) -> None:
 
     for day in range(1, num_of_days + 1):
-        if (day != 1):
-            plant.grow(daily_growth)
-            plant.age(1)
+        plant.grow(daily_growth)
+        plant.age(1)
         print(f"=== Day {day} ===")
         plant.show()
 
@@ -58,6 +57,8 @@ def ft_plant_growth() -> None:
     plant = Plant(name, height, age)
 
     # Simulate/display growth
+    print("=== Garden Plant Growth ===")
+    plant.show()
     simulate_growth(plant, daily_growth, num_of_days)
 
 
