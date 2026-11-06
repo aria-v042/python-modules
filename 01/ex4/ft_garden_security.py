@@ -7,18 +7,22 @@ class Plant:
                  name: str = "",
                  height: float = 0,
                  age: int = 0) -> None:
+
         # Declare attributes
         self._name: str
         self._height: float
         self._age: int
+
         # Init name
-        self._name = name.capitalize()
+        self._name = name
+
         # Init height
         if height < 0:
             self._height = 0
             print("Error, height can't be negative")
         else:
             self._height = height
+
         # Init age
         if age < 0:
             self._age = 0
@@ -31,6 +35,12 @@ class Plant:
     def get_name(self) -> str:
         return self._name
 
+    def get_name_pretty(self) -> str:
+        if self.get_name() == "":
+            return "{unnamed}"
+        else:
+            return self.get_name()
+
     def get_height(self) -> float:
         return self._height
 
@@ -40,42 +50,36 @@ class Plant:
     # Setters
 
     def set_name(self, name: str) -> None:
-        self.show_name_inline()
-        self._name = name.capitalize()
+        print(f"{self.get_name_pretty().capitalize()}: ", end="")
+        self._name = name
         print(f"Name updated: {self.get_name()}")
 
     def set_height(self, height: float) -> None:
         if height < 0:
-            self.show_name_inline()
-            print("Error, height can't be negative")
+            print(f"{self.get_name_pretty().capitalize()}: "
+                  "Error, height can't be negative")
             print("Height update rejected")
         else:
             self._height = height
-            self.show_name_inline()
-            print(f"Height updated: {self.get_height()}cm")
+            print(f"{self.get_name_pretty().capitalize()}: "
+                  f"Height updated: {self.get_height()}cm")
 
     def set_age(self, age: int) -> None:
         if age < 0:
-            self.show_name_inline()
-            print("Error, age can't be negative")
+            print(f"{self.get_name_pretty().capitalize()}: "
+                  "Error, age can't be negative")
             print("Age update rejected")
         else:
             self._age = age
-            self.show_name_inline()
-            print(f"Age updated: {self.get_age()} days")
+            print(f"{self.get_name_pretty().capitalize()}: "
+                  f"Age updated: {self.get_age()} days")
 
     # Plant methods
 
     def show(self) -> None:
-        self.show_name_inline()
-        print(f"{self.get_height():.1f}cm, "
+        print(f"{self.get_name_pretty().capitalize()}: "
+              f"{self.get_height():.1f}cm, "
               f"{self.get_age()} days old")
-
-    def show_name_inline(self) -> None:
-        if self.get_name() == "":
-            print("{unnamed}: ", end="")
-        else:
-            print(f"{self.get_name()}: ", end="")
 
     def grow(self, growth: float) -> None:
         self.set_height(self.get_height() + growth)
