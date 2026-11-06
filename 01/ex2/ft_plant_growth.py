@@ -7,16 +7,16 @@ class Plant:
                  name: str = "",
                  height: float = 0,
                  age: int = 0) -> None:
-        self.name = name
-        self.height = height
+        self._name = name
+        self._height = height
         self._age = age
 
     def show(self) -> None:
-        print(f"{self.name.capitalize()}: {self.height:.1f}cm, "
+        print(f"{self._name.capitalize()}: {self._height:.1f}cm, "
               f"{self._age} days old")
 
     def grow(self, growth: float) -> None:
-        self.height += growth
+        self._height += growth
 
     def age(self, days: int) -> None:
         self._age += days
@@ -55,10 +55,7 @@ def ft_plant_growth() -> None:
     num_of_days = 7
 
     # Create Plant instance and set its attributes
-    plant = Plant()
-    plant.name = name
-    plant.height = height
-    plant._age = age
+    plant = Plant(name, height, age)
 
     # Simulate/display growth
     simulate_growth(plant, daily_growth, num_of_days)
