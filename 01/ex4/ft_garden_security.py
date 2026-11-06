@@ -36,10 +36,10 @@ class Plant:
         return self._name
 
     def get_name_pretty(self) -> str:
-        if self.get_name() == "":
+        if self._name == "":
             return "{unnamed}"
         else:
-            return self.get_name()
+            return self._name
 
     def get_height(self) -> float:
         return self._height
@@ -52,7 +52,7 @@ class Plant:
     def set_name(self, name: str) -> None:
         print(f"{self.get_name_pretty().capitalize()}: ", end="")
         self._name = name
-        print(f"Name updated: {self.get_name()}")
+        print(f"Name updated: {self._name}")
 
     def set_height(self, height: float) -> None:
         if height < 0:
@@ -62,7 +62,7 @@ class Plant:
         else:
             self._height = height
             print(f"{self.get_name_pretty().capitalize()}: "
-                  f"Height updated: {self.get_height()}cm")
+                  f"Height updated: {self._height}cm")
 
     def set_age(self, age: int) -> None:
         if age < 0:
@@ -72,20 +72,20 @@ class Plant:
         else:
             self._age = age
             print(f"{self.get_name_pretty().capitalize()}: "
-                  f"Age updated: {self.get_age()} days")
+                  f"Age updated: {self._age} days")
 
     # Plant methods
 
     def show(self) -> None:
         print(f"{self.get_name_pretty().capitalize()}: "
-              f"{self.get_height():.1f}cm, "
-              f"{self.get_age()} days old")
+              f"{self._height:.1f}cm, "
+              f"{self._age} days old")
 
     def grow(self, growth: float) -> None:
-        self.set_height(self.get_height() + growth)
+        self.set_height(self._height + growth)
 
     def age(self, days: int) -> None:
-        self.set_age(self.get_age() + days)
+        self.set_age(self._age + days)
 
 
 def test_secure_plant(
