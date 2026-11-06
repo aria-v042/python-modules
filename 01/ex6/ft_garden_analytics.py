@@ -40,10 +40,10 @@ class Plant:
         return self._name
 
     def get_name_pretty(self) -> str:
-        if self.get_name() == "":
+        if self._name == "":
             return "{unnamed}"
         else:
-            return self.get_name()
+            return self._name
 
     def get_height(self) -> float:
         return self._height
