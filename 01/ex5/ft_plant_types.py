@@ -98,7 +98,7 @@ class Flower(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f" Color: {self.get_color()}")
+        print(f" Color: {self.get_color().lower()}")
         if self._bloomed:
             print(f" {self.get_name_pretty().capitalize()} "
                   "is blooming beautifully!")
