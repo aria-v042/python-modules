@@ -7,16 +7,16 @@ class Plant:
                  name: str = "",
                  height: float = 0,
                  age: int = 0) -> None:
-        self.name = name
-        self.height = height
+        self._name = name
+        self._height = height
         self._age = age
 
     def show(self) -> None:
-        print(f"{self.name.capitalize()}: {self.height:.1f}cm, "
+        print(f"{self._name.capitalize()}: {self._height:.1f}cm, "
               f"{self._age} days old")
 
     def grow(self, growth: float) -> None:
-        self.height += growth
+        self._height += growth
 
     def age(self, days: int) -> None:
         self._age += days
@@ -32,7 +32,7 @@ def ft_plant_factory() -> None:
     plant5 = Plant("fern", 15.0, 120)
 
     # Display Plant instances created
-    print("Created: ", end="")
+    print(f"Created: ", end="")
     plant1.show()
     print("Created: ", end="")
     plant2.show()
