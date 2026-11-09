@@ -32,7 +32,7 @@ def ft_plant_factory() -> None:
     plant5 = Plant("fern", 15.0, 120)
 
     # Display Plant instances created
-    print(f"Created: ", end="")
+    print("Created: ", end="")
     plant1.show()
     print("Created: ", end="")
     plant2.show()
