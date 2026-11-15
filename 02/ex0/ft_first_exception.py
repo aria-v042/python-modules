@@ -34,7 +34,7 @@ def main() -> None:
     print()
 
     # TypeError
-    test_temperature(None)
+    test_temperature(None)  # type: ignore[arg-type]
     print()
 
     print("All tests completed - program didn't crash!")
