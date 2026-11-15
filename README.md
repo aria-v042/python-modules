@@ -23,3 +23,7 @@ Python Modules from [42](https://42.fr/)'s curriculum.
 [Python documentation >> Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
 
 [Python documentation >> Built-in Exceptions](https://docs.python.org/3/builtins/exceptions.html#bltin-exceptions)
+
+[Stack Overflow: Converting String to Int using try/except in Python](https://stackoverflow.com/questions/8075877/converting-string-to-int-using-try-except-in-python#comment118245688_8075959)
+
+[Stack Overflow: How do I determine what type of exception occurred?](https://stackoverflow.com/a/9824050/32270021)
