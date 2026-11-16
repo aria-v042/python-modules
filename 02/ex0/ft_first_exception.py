@@ -20,9 +20,9 @@ def test_temperature() -> None:
     for input in test_inputs:
         print(f"Input data is '{input}'")
         try:
-            temp: int = input_temperature(input)    # type: ignore[arg-type]
+            temp: int = input_temperature(input)
         except (TypeError, ValueError) as e:
-            print(f"Caught input_temperature {type(e).__name__}: {e}\n")
+            print(f"Caught input_temperature {e.__class__.__name__}: {e}\n")
         else:
             print(f"Temperature is now {temp}°C\n")
 
