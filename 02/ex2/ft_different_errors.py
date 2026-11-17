@@ -16,7 +16,7 @@ def garden_operations(operation_number: int) -> None:
 
 def test_error_types() -> None:
 
-    print("=== Garden Error Types Demo ===\n")
+    print("\n=== Garden Error Types Demo ===\n")
 
     operation_numbers = [0, 1, 2, 3, 4]
 
@@ -38,7 +38,7 @@ def test_error_types() -> None:
         else:
             print("Operation completed successfully!\n")
 
-    print("All error types successfully!")
+    print("All error types successfully!\n")
 
 
 def main() -> int:

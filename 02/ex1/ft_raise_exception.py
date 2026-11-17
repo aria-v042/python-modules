@@ -15,7 +15,7 @@ def input_temperature(temp_str: str) -> int:
 
 def test_temperature() -> None:
 
-    print("=== Garden Temperature Checker ===\n")
+    print("\n=== Garden Temperature Checker ===\n")
 
     test_inputs = [
             "25",
@@ -34,7 +34,7 @@ def test_temperature() -> None:
         else:
             print(f"Temperature is now {temp}°C\n")
 
-    print("All tests completed - program didn't crash!")
+    print("All tests completed - program didn't crash!\n")
 
 
 def main() -> None:
