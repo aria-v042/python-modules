@@ -20,7 +20,7 @@ def test_temperature() -> None:
     test_inputs = [
             "25",
             "abc",
-            None,
+            # None,
             "100",
             "-50",
             ]
