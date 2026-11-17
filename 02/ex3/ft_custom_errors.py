@@ -80,11 +80,6 @@ def test_custom_errors() -> None:
     print("\nAll custom error types work correctly!\n")
 
 
-def main() -> None:
-
-    test_custom_errors()
-
-
 if __name__ == "__main__":
 
-    main()
+    test_custom_errors()
