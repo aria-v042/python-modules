@@ -1,17 +1,17 @@
-#!/usr/bin/env python3 
+#!/usr/bin/env python3
 
 
 def garden_operations(operation_number: int) -> None:
 
     if operation_number == 0:
-        num = int("abc")
+        int("mushi")
     elif operation_number == 1:
-        num = 42 / 0
+        42 / 0
     elif operation_number == 2:
-        f = open("free_iphone.sh", "r")
+        f = open("FREE_CYBERWEAR!.exe", "r")
         f.close()
     elif operation_number == 3:
-        string = "six" + 7
+        "six" + 7
 
 
 def test_error_types() -> None:
