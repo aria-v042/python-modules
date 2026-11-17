@@ -31,26 +31,6 @@ class WaterError(GardenError):
 # === Demo functions === #
 
 
-# def garden_errors() -> None:
-#     raise GardenError
-#
-#
-# def plant_errors(error_number: int = 0) -> None:
-#
-#     if error_number == 0:
-#         raise PlantError
-#     elif error_number == 1:
-#         raise PlantError("The tomato plant is wilting!")
-#
-#
-# def water_errors(error_number: int = 0) -> None:
-#
-#     if error_number == 0:
-#         raise WaterError
-#     elif error_number == 1:
-#         raise WaterError("Not enough water in the tank!")
-
-
 def raise_error(error_type: str) -> None:
 
     if error_type == "GardenError":
