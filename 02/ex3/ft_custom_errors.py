@@ -100,10 +100,9 @@ def test_custom_errors() -> None:
     print("\nAll custom error types work correctly!\n")
 
 
-def main() -> int:
+def main() -> None:
 
     test_custom_errors()
-    return 0
 
 
 if __name__ == "__main__":
