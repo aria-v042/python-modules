@@ -46,7 +46,7 @@ def test_watering_system(plants: list[str]) -> None:
 
 def main() -> int:
 
-    print("\n=== Garden Watering System ===\n")
+    print("=== Garden Watering System ===\n")
 
     print("Testing valid plants...")
     valid_plants = [
@@ -64,9 +64,9 @@ def main() -> int:
             ]
     test_watering_system(invalid_plants)
 
-    print("Cleanup always happens, even with errors!\n")
-
+    print("Cleanup always happens, even with errors!")
     return 0
+
 
 if __name__ == "__main__":
 
