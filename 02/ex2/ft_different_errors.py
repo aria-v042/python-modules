@@ -14,19 +14,12 @@ def garden_operations(operation_number: int) -> None:
         "six" + 7
 
 
-def test_error_types() -> None:
-
-    print("\n=== Garden Error Types Demo ===\n")
-
-    operation_numbers = [0, 1, 2, 3, 4]
+def test_error_types(operation_numbers: list[int]) -> None:
 
     for op in operation_numbers:
         print(f"Testing operation {op}...")
         try:
             garden_operations(op)
-        # except (ValueError, ZeroDivisionError,
-        #         FileNotFoundError, TypeError) as e:
-        #     print(f"Caught {e.__class__.__name__}: {e}\n")
         except ValueError as e:
             print(f"Caught ValueError: {e}\n")
         except ZeroDivisionError as e:
@@ -38,9 +31,18 @@ def test_error_types() -> None:
         else:
             print("Operation completed successfully!\n")
 
-    print("All error types successfully!\n")
+
+def main() -> int:
+
+    print("=== Garden Error Types Demo ===\n")
+
+    operation_numbers = [0, 1, 2, 3, 4]
+    test_error_types(operation_numbers)
+
+    print("All error types successfully!")
+    return 0
 
 
 if __name__ == "__main__":
 
-    test_error_types()
+    main()

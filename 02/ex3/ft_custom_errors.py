@@ -45,17 +45,7 @@ def raise_error(error_type: str) -> None:
         raise WaterError
 
 
-def test_custom_errors() -> None:
-
-    print("\n=== Custom Garden Errors Demo ===\n")
-
-    custom_errors = [
-            "PlantError",
-            "WaterError",
-            "GardenError",
-            "PlantError default message",
-            "WaterError default message",
-            ]
+def test_custom_errors(custom_errors: list[str]) -> None:
 
     # Catching specific error types
     for error_type in custom_errors:
@@ -76,10 +66,26 @@ def test_custom_errors() -> None:
             raise_error(error_type)
         except GardenError as e:
             print(f"Caught GardenError: {e}")
+    print()
 
-    print("\nAll custom error types work correctly!\n")
+
+def main() -> int:
+
+    print("=== Custom Garden Errors Demo ===\n")
+
+    custom_errors = [
+            "PlantError",
+            "WaterError",
+            # "GardenError",
+            # "PlantError default message",
+            # "WaterError default message",
+            ]
+    test_custom_errors(custom_errors)
+
+    print("All custom error types work correctly!")
+    return 0
 
 
 if __name__ == "__main__":
 
-    test_custom_errors()
+    main()
