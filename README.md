@@ -27,3 +27,7 @@ Python Modules from [42](https://42.fr/)'s curriculum.
 [Stack Overflow: Converting String to Int using try/except in Python](https://stackoverflow.com/questions/8075877/converting-string-to-int-using-try-except-in-python#comment118245688_8075959)
 
 [Stack Overflow: How do I determine what type of exception occurred?](https://stackoverflow.com/a/9824050/32270021)
+
+### Python Module 03
+
+[Python documentation >> sys module >> sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
