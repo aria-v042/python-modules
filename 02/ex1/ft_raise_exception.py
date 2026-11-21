@@ -13,30 +13,26 @@ def input_temperature(temp_str: str) -> int:
     return temp
 
 
-def test_temperature(test_inputs: list[str]) -> None:
+def test_temperature(data: str) -> None:
 
-    for data in test_inputs:
-        print(f"Input data is '{data}'")
-        try:
-            temp: int = input_temperature(data)
-        except (TypeError, ValueError) as e:
-            print(f"Caught input_temperature {e.__class__.__name__}: {e}\n")
-        else:
-            print(f"Temperature is now {temp}°C\n")
+    print(f"Input data is '{data}'")
+    try:
+        temp: int = input_temperature(data)
+    except (TypeError, ValueError) as e:
+        print(f"Caught input_temperature {e.__class__.__name__}: {e}\n")
+    else:
+        print(f"Temperature is now {temp}°C\n")
 
 
 def main() -> int:
 
     print("=== Garden Temperature Checker ===\n")
 
-    test_inputs = [
-            "25",
-            "abc",
-            # None,
-            "100",
-            "-50",
-            ]
-    test_temperature(test_inputs)
+    test_temperature("25")
+    test_temperature("abc")
+    # test_temperature(None)
+    test_temperature("100")
+    test_temperature("-50")
 
     print("All tests completed - program didn't crash!")
     return 0

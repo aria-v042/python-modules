@@ -3,19 +3,20 @@
 
 def garden_operations(operation_number: int) -> None:
 
-    if operation_number == 0:
+    if operation_number == 0:       # ValueError
         int("mushi")
-    elif operation_number == 1:
+    elif operation_number == 1:     # ZeroDivisionError
         42 / 0
-    elif operation_number == 2:
+    elif operation_number == 2:     # FileNotFoundError
         f = open("FREE_CYBERWEAR!.exe", "r")
         f.close()
-    elif operation_number == 3:
+    elif operation_number == 3:     # TypeError
         "six" + 7
 
 
-def test_error_types(operation_numbers: list[int]) -> None:
+def test_error_types() -> None:
 
+    operation_numbers = [0, 1, 2, 3, 4]
     for op in operation_numbers:
         print(f"Testing operation {op}...")
         try:
@@ -36,8 +37,7 @@ def main() -> int:
 
     print("=== Garden Error Types Demo ===\n")
 
-    operation_numbers = [0, 1, 2, 3, 4]
-    test_error_types(operation_numbers)
+    test_error_types()
 
     print("All error types successfully!")
     return 0
