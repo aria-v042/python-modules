@@ -12,6 +12,10 @@ Python Modules from [42](https://42.fr/)'s curriculum.
 
 [PEP 20 – The Zen of Python](https://peps.python.org/pep-0020/)
 
+### Python Module 00
+
+[Python documentation >> The Python Tutorial](https://docs.python.org/3/tutorial/index.html)
+
 ### Python Module 01
 
 [Python documentation >> Classes](https://docs.python.org/3/tutorial/classes.html)
