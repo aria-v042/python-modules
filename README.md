@@ -34,4 +34,57 @@ Python Modules from [42](https://42.fr/)'s curriculum.
 
 ### Python Module 03
 
-[Python documentation >> sys module >> sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+[Python documentation >> sys >> sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+
+[Python documentation >> Introduction >> Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
+
+[Python documentation >> Built-in Types >> Lists](https://docs.python.org/3/builtins/stdtypes.html#typesseq-list)
+
+[Python documentation >> Data Structures >> More on Lists](https://docs.python.org/3/builtins/stdtypes.html#typesseq-list)
+
+[GeeksforGeeks: Python Lists](https://www.geeksforgeeks.org/python/python-lists/)
+
+Python list essentials:
+```python
+# Create an empty list
+empty_list = []
+empty_list = list()
+
+# Create a list with items
+my_list = [1]       # Single item
+my_list = [0, 1, 2] # List with 3 items
+
+# Create a list based on an existing iterable object (e.g. another list)
+## Iterable can be a list, str, tuple, dict, etc...
+my_iterable = [1, 2]
+my_list = list(my_iterable) # [1,2]
+## New list with each item of other list +1
+my_iter_plus1 = [i+1 for i in my_iterable]  # [2, 3]
+## New list from a string
+abc_list = list("abc") # ['a', 'b', 'c']
+
+# Access items from a list
+my_list = [4, 6, 0, 2]
+my_list[1] # 6 (the value in index 1)
+## Negative numbers count from the end
+my_list[-2] # 0 (value in 2nd to last index)
+
+# Re-assign values in a list
+my_list = [4, 6, 0, 1, 2]
+my_list[2] = 1
+my_list # [4, 6, 1, 1, 2]
+
+# Slices of a list
+my_list = [4, 6, 0, 1, 2]
+my_list[:] # [4, 6, 0, 1, 2] --> whole list
+my_list[2:] # [0, 1, 2] --> items starting from index 2
+my_list[:2] # [4, 6] --> items up to index 2, not included
+my_list[1:3] # [6, 0] --> items start at [1] and stop at [3] (not included)
+
+# Slices return a copy of the list, not direct references to it
+my_list = [6, 4, 2]
+my_sliced_list = my_list[:] # [6, 4, 2] --> copies the whole list
+my_sliced_list[0] = 0   # Re-assign value of index 0
+my_sliced_list # [0, 4, 2] --> only changed the copy
+my_list # [6, 4, 2] --> original list keeps original values
+```
